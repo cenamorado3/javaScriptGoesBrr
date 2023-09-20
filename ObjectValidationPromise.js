@@ -18,8 +18,8 @@ export class ObjectValidator{
                 else if(typeof v !== 'object' && o["smaller"].includes(k) &&
                     v != r2[k]
                 ){
+                    let valueDiff = {[k]: {"r1": r1, "r2": r2}};
                     diff.push(`The value of ${k} is not equal in ${parentKey}.`)
-                    let valueDiff = {[JSON.stringify(r1)]: JSON.stringify(r1), [JSON.stringify(r2)]: JSON.stringify(r2)};
                     diff.push(valueDiff);
                 }   
             }
